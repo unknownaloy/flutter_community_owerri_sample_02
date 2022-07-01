@@ -22,14 +22,14 @@ class CustomDrawer extends StatelessWidget {
             leading: CircleAvatar(
               backgroundColor: Colors.orange[100],
             ),
-            title: Text(
+            title: const Text(
               "Miroslava Savitskaya",
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.w700,
               ),
             ),
-            subtitle: Text(
+            subtitle: const Text(
               "Active status",
               style: TextStyle(
                 color: Colors.white,

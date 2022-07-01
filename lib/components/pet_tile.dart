@@ -22,7 +22,7 @@ class PetTile extends StatelessWidget {
                 boxShadow: [
                   BoxShadow(
                     color: Colors.grey[350]!,
-                    offset: Offset(0.0, 6.0), //(x,y)
+                    offset: const Offset(0.0, 6.0), //(x,y)
                     blurRadius: 8.0,
                   ),
                 ],

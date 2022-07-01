@@ -6,7 +6,6 @@ class PetCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    BigInt testingOne = BigInt.from(1);
     return GestureDetector(
       onTap: () {
         Navigator.push(
