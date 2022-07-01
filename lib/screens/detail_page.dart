@@ -27,7 +27,7 @@ class DetailPage extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("Name"),
+                        const Text("Name"),
                         Container(
                           height: 128.0,
                           width: double.infinity,

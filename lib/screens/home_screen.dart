@@ -2,35 +2,38 @@ import 'package:flutter/material.dart';
 import 'package:flutter_community_owerri_week_02/components/custom_app_bar.dart';
 import 'package:flutter_community_owerri_week_02/components/home_body.dart';
 
-class HomeScreen extends StatelessWidget {
-  final VoidCallback onDrawerPressed;
-  final Animation<Offset> slideAnimation;
-  final Animation<double> scaleAnimation;
-  final Animation<Decoration> decorationAnimation;
+class HomeScreen extends StatefulWidget {
 
   const HomeScreen({
     Key? key,
-    required this.onDrawerPressed,
-    required this.slideAnimation,
-    required this.scaleAnimation,
-    required this.decorationAnimation,
   }) : super(key: key);
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+
+  bool _showDrawer = false;
+
+  @override
   Widget build(BuildContext context) {
-    return SlideTransition(
-      position: slideAnimation,
-      child: ScaleTransition(
-        scale: scaleAnimation,
-        child: AnimatedBuilder(
-          animation: decorationAnimation,
+    return Transform.translate(
+      offset: _showDrawer ? const Offset(240, 0) : Offset.zero,
+      child: Transform.scale(
+        scale: _showDrawer ? 0.8 : 1.0,
+        child: Container(
+          clipBehavior: Clip.antiAlias,
+          decoration: const BoxDecoration(color: Colors.white),
           child: Stack(
             fit: StackFit.expand,
             children: [
               Align(
                 alignment: Alignment.topCenter,
                 child: CustomAppBar(
-                  onDrawerPressed: onDrawerPressed,
+                  onDrawerPressed: () {
+                    setState(() => _showDrawer = !_showDrawer);
+                  },
                 ),
               ),
               const Positioned(
@@ -42,13 +45,6 @@ class HomeScreen extends StatelessWidget {
               ),
             ],
           ),
-          builder: (BuildContext context, Widget? child) {
-            return Container(
-              clipBehavior: Clip.antiAlias,
-              decoration: decorationAnimation.value,
-              child: child,
-            );
-          },
         ),
       ),
     );
