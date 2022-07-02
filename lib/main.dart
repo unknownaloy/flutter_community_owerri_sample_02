@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_community_owerri_week_02/screens/full_view.dart';
+import 'package:flutter_community_owerri_week_02/screens/full_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const FullView(),
+      home: const FullScreen(),
     );
   }
 }

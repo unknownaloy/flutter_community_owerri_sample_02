@@ -19,7 +19,6 @@ class HomeBody extends StatelessWidget {
       child: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
-            // Search bar
             SliverToBoxAdapter(
               child: Container(
                 margin: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -29,8 +28,8 @@ class HomeBody extends StatelessWidget {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(16.0),
                 ),
-              ) ,
-            ),
+              ),
+            )
           ];
         },
         body: Column(
@@ -38,8 +37,6 @@ class HomeBody extends StatelessWidget {
             const SizedBox(
               height: 24.0,
             ),
-
-            // Pet tiles
             Padding(
               padding: const EdgeInsets.only(left: 16.0),
               child: SizedBox(
@@ -47,44 +44,44 @@ class HomeBody extends StatelessWidget {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: const [
-                    PetTile(
-                      petType: "Cat",
-                    ),
-                    PetTile(
-                      petType: "Dog",
-                    ),
-                    PetTile(
-                      petType: "Rabbit",
-                    ),
-                    PetTile(
-                      petType: "Bird",
-                    ),
-                    PetTile(
-                      petType: "Mouse",
-                    ),
-                    PetTile(
-                      petType: "Squirrel",
-                    ),
-                    PetTile(
-                      petType: "Snake",
-                    ),
+                    PetTile(petName: "Dog"),
+                    PetTile(petName: "Cat"),
+                    PetTile(petName: "Squirrel"),
+                    PetTile(petName: "Rabbit"),
+                    PetTile(petName: "Bird"),
+                    PetTile(petName: "Dog"),
+                    PetTile(petName: "Cat"),
+                    PetTile(petName: "Squirrel"),
+                    PetTile(petName: "Rabbit"),
+                    PetTile(petName: "Bird"),
                   ],
                 ),
               ),
             ),
-
-            const SizedBox(height: 24.0,),
-
+            const SizedBox(
+              height: 24.0,
+            ),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: ListView(
                   children: const [
                     PetCard(),
-                    SizedBox(height: 16.0,),
+                    SizedBox(
+                      height: 16.0,
+                    ),
                     PetCard(),
-                    SizedBox(height: 16.0,),
+                    SizedBox(
+                      height: 16.0,
+                    ),
                     PetCard(),
+                    SizedBox(
+                      height: 16.0,
+                    ),
+                    PetCard(),
+                    SizedBox(
+                      height: 16.0,
+                    ),
                   ],
                 ),
               ),

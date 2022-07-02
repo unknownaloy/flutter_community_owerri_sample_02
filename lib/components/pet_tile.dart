@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class PetTile extends StatelessWidget {
-  final String petType;
+  const PetTile({Key? key, required this.petName,}) : super(key: key);
 
-  const PetTile({Key? key, required this.petType,}) : super(key: key);
+  final String petName;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class PetTile extends StatelessWidget {
                 boxShadow: [
                   BoxShadow(
                     color: Colors.grey[350]!,
-                    offset: const Offset(0.0, 6.0), //(x,y)
+                    offset: const Offset(0.0, 6.0),
                     blurRadius: 8.0,
                   ),
                 ],
@@ -32,16 +32,12 @@ class PetTile extends StatelessWidget {
               height: 8.0,
             ),
             Text(
-              petType,
-              style: const TextStyle(
-                fontSize: 12.0,
-              ),
+              petName,
+              style: const TextStyle(fontSize: 12.0),
             ),
           ],
         ),
-        const SizedBox(
-          width: 16.0,
-        ),
+        const SizedBox(width: 16.0,),
       ],
     );
   }

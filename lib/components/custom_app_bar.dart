@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget {
-  final VoidCallback onDrawerPressed;
-
   const CustomAppBar({
     Key? key,
-    required this.onDrawerPressed,
+    required this.onPressed,
   }) : super(key: key);
+
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -16,11 +16,9 @@ class CustomAppBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           IconButton(
-            onPressed: onDrawerPressed,
-            icon: const Icon(
-              Icons.menu,
-              color: Colors.grey,
-            ),
+            onPressed: onPressed,
+            icon: const Icon(Icons.menu),
+            color: Colors.grey,
           ),
           Column(
             mainAxisSize: MainAxisSize.min,
@@ -29,11 +27,11 @@ class CustomAppBar extends StatelessWidget {
               SizedBox(
                 height: 4.0,
               ),
-              Text("Kyiv, Ukraine"),
+              Text("Google Meet"),
+              CircleAvatar(
+                backgroundColor: Colors.grey,
+              ),
             ],
-          ),
-          const CircleAvatar(
-            backgroundColor: Colors.grey,
           ),
         ],
       ),

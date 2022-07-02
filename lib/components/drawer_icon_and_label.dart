@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
 class DrawerIconAndLabel extends StatelessWidget {
-  final IconData icon;
-  final Color color;
-  final String label;
-
   const DrawerIconAndLabel({
     Key? key,
     required this.icon,
     this.color = Colors.white,
     required this.label,
   }) : super(key: key);
+
+  final IconData icon;
+  final Color color;
+  final String label;
 
   @override
   Widget build(BuildContext context) {
